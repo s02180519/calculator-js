@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>JavaScript</title>
+    <script src="calculator.js"></script>
+    <link rel="stylesheet" type="text/css" href="calculator.css">
+</head>
+<body>
+<div class="calculator">
+    <form name="calc" class="calculator_form">
+
+        <div class="calculator__row" >
+            <input name="input" id="display" class="calculator__display" type="text" disabled>
+        </div>
+        <div class="calculator__row">
+            <button type="button" onclick="func_delete_all()"value="C" class="calculator__key calculator__clear">C</button>
+            <button type="button" onclick="func_delete_one()"value="<-" class="calculator__key calculator__backspace"><-</button>
+            <button type="button" onclick="func_power()" value="^2" class="calculator__key calculator__power">^2</button>
+            <button type="button" onclick="calc.input.value+=value" value="+" class="calculator__key calculator__button">+</button>
+
+        </div>
+        <div class="calculator__row">
+
+            <button type="button" onclick="calc.input.value+=value" value="7" class="calculator__key calculator__button">7</button>
+            <button type="button" onclick="calc.input.value+=value" value="8" class="calculator__key calculator__button">8</button>
+            <button type="button" onclick="calc.input.value+=value" value="9" class="calculator__key calculator__button">9</button>
+            <button type="button" onclick="calc.input.value+=value" value="/" class="calculator__key calculator__button">/</button>
+
+        </div>
+        <div class="calculator__row">
+            <button type="button" onclick="calc.input.value+=value" value="4" class="calculator__key calculator__button">4</button>
+            <button type="button" onclick="calc.input.value+=value" value="5" class="calculator__key calculator__button">5</button>
+            <button type="button" onclick="calc.input.value+=value" value="6" class="calculator__key calculator__button">6</button>
+            <button type="button" onclick="calc.input.value+=value" value="*" class="calculator__key calculator__button">*</button>
+        </div>
+        <div class="calculator__row">
+            <button type="button" onclick="calc.input.value+=value" value="1" class="calculator__key calculator__button">1</button>
+            <button type="button" onclick="calc.input.value+=value" value="2" class="calculator__key calculator__button">2</button>
+            <button type="button" onclick="calc.input.value+=value" value="3" class="calculator__key calculator__button">3</button>
+            <button type="button" onclick="calc.input.value+=value" value="-" class="calculator__key calculator__button">-</button>
+
+        </div>
+        <div class="calculator__row">
+            <button type="button" onclick="calc.input.value+=value" value="0" class="calculator__key calculator__button">0</button>
+            <button type="button" onclick="calc.input.value+=value" value="." class="calculator__key calculator__button">.</button>
+            <button type="button" onclick="calc.input.value=eval(calc.input.value)"value="=" class="calculator__key calculator__key--equal">=</button>
+
+        </div>
+
+    </form>
+</div>
+<script>
+    function func_power() {
+        calc.input.value*=calc.input.value;
+    }
+    function func_delete_all() {
+        calc.input.value=null;
+    }
+    function func_delete_one() {
+        calc.input.value=calc.input.value.substring(0, calc.input.value.length-1);
+    }
+</script>
+</body>
+</html>
